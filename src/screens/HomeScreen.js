@@ -34,10 +34,10 @@ export default function HomeScreen() {
           <img src="/images/banner1.png" alt="Banner1"></img>
         </Link>
         <Link to="/product/62bb4ce3e42cf143c86968ac">
-          <img src="/images/banner2.png" alt="Banner2"></img>
+          <img src="/images/banner2.PNG" alt="Banner2"></img>
         </Link>
         <Link to="/product/62bb4ce3e42cf143c86968ac">
-          <img src="/images/banner3.png" alt="Banner3"></img>
+          <img src="/images/banner3.PNG" alt="Banner3"></img>
         </Link>
       </Carousel>
       <h1 className="title">BRANDS</h1>
