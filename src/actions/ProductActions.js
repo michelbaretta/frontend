@@ -100,7 +100,9 @@ export const detailsProduct = (productId) => async (dispatch) => {
     payload: productId,
   });
   try {
-    const { data } = await Axios.get(`/api/products/${productId}`);
+    const { data } = await Axios.get(
+      `${process.env.REACT_APP_API_URL}/api/products/${productId}`
+    );
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
       payload: data,
