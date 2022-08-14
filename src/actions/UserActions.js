@@ -81,11 +81,14 @@ export const detailsUser = (userId) => async (dispatch, getState) => {
     userSignin: { userInfo },
   } = getState();
   try {
-    const { data } = await Axios.get(`/api/users/${userId}`, {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    });
+    const { data } = await Axios.get(
+      `${process.env.REACT_APP_API_URL}/api/users/${userId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      }
+    );
     dispatch({ type: USER_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     const message =
@@ -105,11 +108,15 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     userSignin: { userInfo },
   } = getState();
   try {
-    const { data } = await Axios.put(`/api/users/profile`, user, {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    });
+    const { data } = await Axios.put(
+      `${process.env.REACT_APP_API_URL}/api/users/profile`,
+      user,
+      {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      }
+    );
     dispatch({ type: USER_UPDATE_PROFILE_SUCCESS, payload: data });
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
     localStorage.setItem("userInfo", JSON.stringify(data));
@@ -158,11 +165,14 @@ export const deleteUser = (userId) => async (dispatch, getState) => {
     const {
       userSignin: { userInfo },
     } = getState();
-    const { data } = await Axios.delete(`/api/users/${userId}`, {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    });
+    const { data } = await Axios.delete(
+      `${process.env.REACT_APP_API_URL}/api/users/${userId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      }
+    );
     dispatch({ type: USER_DELETE_SUCCESS, payload: data });
   } catch (error) {
     const message =
@@ -182,11 +192,15 @@ export const updateUser = (user) => async (dispatch, getState) => {
     userSignin: { userInfo },
   } = getState();
   try {
-    const { data } = await Axios.put(`/api/users/${user._id}`, user, {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    });
+    const { data } = await Axios.put(
+      `${process.env.REACT_APP_API_URL}/api/users/${user._id}`,
+      user,
+      {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      }
+    );
     dispatch({ type: USER_UPDATE_SUCCESS, payload: data });
   } catch (error) {
     const message =

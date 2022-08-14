@@ -63,11 +63,14 @@ export const detailsOrder = (orderId) => async (dispatch, getState) => {
     const {
       userSignin: { userInfo },
     } = getState();
-    const { data } = await Axios.get(`/api/orders/${orderId}`, {
-      headers: {
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    });
+    const { data } = await Axios.get(
+      `${process.env.REACT_APP_API_URL}/api/orders/${orderId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      }
+    );
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data.order });
   } catch (error) {
     const message =
@@ -87,9 +90,13 @@ export const payOrder = (order, paymentResult) => (dispatch, getState) => {
     userSignin: { userInfo },
   } = getState();
   try {
-    const { data } = Axios.put(`/api/orders/${order._id}/pay`, paymentResult, {
-      headers: { Authorization: `Bearer ${userInfo.token}` },
-    });
+    const { data } = Axios.put(
+      `${process.env.REACT_APP_API_URL}/api/orders/${order._id}/pay`,
+      paymentResult,
+      {
+        headers: { Authorization: `Bearer ${userInfo.token}` },
+      }
+    );
     dispatch({ type: ORDER_PAY_SUCCESS, payload: data });
   } catch (error) {
     const message =
@@ -159,9 +166,12 @@ export const deleteOrder = (orderId) => async (dispatch, getState) => {
     userSignin: { userInfo },
   } = getState();
   try {
-    const { data } = await Axios.delete(`/api/orders/${orderId}`, {
-      headers: { Authorization: `Bearer ${userInfo.token}` },
-    });
+    const { data } = await Axios.delete(
+      `${process.env.REACT_APP_API_URL}/api/orders/${orderId}`,
+      {
+        headers: { Authorization: `Bearer ${userInfo.token}` },
+      }
+    );
     dispatch({ type: ORDER_DELETE_SUCCESS, payload: data });
   } catch (error) {
     const message =
@@ -182,7 +192,7 @@ export const deliverOrder = (orderId) => (dispatch, getState) => {
   } = getState();
   try {
     const { data } = Axios.put(
-      `/api/orders/${orderId}/deliver`,
+      `${process.env.REACT_APP_API_URL}/api/orders/${orderId}/deliver`,
       {},
       {
         headers: { Authorization: `Bearer ${userInfo.token}` },
