@@ -581,6 +581,7 @@ label {
   max-height: 100%;
   object-fit: cover;
   filter: brightness(60%);
+  height: 45rem;
 }
 
 .categorycontainer{
@@ -914,6 +915,8 @@ background-color: red;
     flex-direction: column;
     width: 100%;
   } 
+
+
 
   #searchscreen {
     align-items: center;
