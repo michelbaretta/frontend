@@ -60,7 +60,7 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <div className="row top">
+          <div className="row top" id="product-screen">
             <div className="col-2">
               <img
                 className="large"
@@ -79,7 +79,10 @@ export default function ProductScreen(props) {
                     numReviews={product.numReviews}
                   ></Rating>
                 </li>
-                <li> Price: ${product.price}</li>
+                <li>
+                  {" "}
+                  Price: <b>${product.price}</b>
+                </li>
                 <li>
                   {" "}
                   Description:
@@ -149,14 +152,20 @@ export default function ProductScreen(props) {
               <MessageBox>There is no review</MessageBox>
             )}
             <ul>
-              {product.reviews.map((review) => (
-                <li key={review._id}>
-                  <strong>{review.name}</strong>
-                  <Rating rating={review.rating} caption=" "></Rating>
-                  <p>{review.createdAt.substring(0, 10)}</p>
-                  <p>{review.comment}</p>
-                </li>
-              ))}
+              <div className="review">
+                <div className="reviewbox">
+                  {product.reviews.map((review) => (
+                    <li key={review._id}>
+                      <p className="reviewname">{review.name}</p>
+                      <Rating rating={review.rating} caption=" "></Rating>
+                      <p className="reviewdate">
+                        {review.createdAt.substring(0, 10)}
+                      </p>
+                      <p className="reviewcomment">{review.comment}</p>
+                    </li>
+                  ))}
+                </div>
+              </div>
               <li>
                 {userInfo ? (
                   <form className="form" onSubmit={submitHandler}>
