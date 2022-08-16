@@ -24,10 +24,10 @@ export default function HomeScreen() {
   return (
     <div>
       <Carousel
+        className="carousel"
         showArrows={true}
         showIndicators={false}
-        infiniteLoop={true}
-        autoPlay
+        autoPlay={true}
         showThumbs={false}
       >
         <Link to="/product/62bb4ce3e42cf143c86968ac">
@@ -40,7 +40,7 @@ export default function HomeScreen() {
           <img src="/images/banner3.PNG" alt="Banner3"></img>
         </Link>
       </Carousel>
-      <h1 className="title">BRANDS</h1>
+      <h1 className="title brands">BRANDS</h1>
       <div>
         <div className="carouselbrands">
           <div className="slider-container">
@@ -49,6 +49,7 @@ export default function HomeScreen() {
               modules={[Pagination, Navigation]}
               spaceBetween={10}
               slidesPerView={5}
+              infiniteLoop={true}
               navigation
               breakpoints={{
                 // when window width is >= 340px
@@ -67,10 +68,8 @@ export default function HomeScreen() {
                   slidesPerView: 5,
                 },
               }}
-              pagination={{ clickable: true }}
-              scrollbar={{ draggable: true }}
-              onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log("slide change")}
+              pagination={{ clickable: false }}
+              scrollbar={{ draggable: false }}
             >
               <SwiperSlide>
                 <Link to="/search/brand/Adidas">
@@ -133,7 +132,7 @@ export default function HomeScreen() {
             alt="jacketcategory"
           ></img>
           <img
-            className="categoriesimg"
+            className="categoriesimg hoodie"
             src="/images/hoodiecategory.jpg"
             alt="hoodiecategory"
           ></img>
@@ -165,7 +164,7 @@ export default function HomeScreen() {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <div className="row center">
+        <div className="row center homeproducts">
           {products.map((product) => (
             <Product key={product.id} product={product}></Product>
           ))}

@@ -80,7 +80,7 @@ function App() {
                 src="/images/maddogspng.png"
                 alt="Angry Wolf"
               />
-              MAD WOLF
+              <p className="text-brand">MAD WOLF</p>
             </Link>
           </div>
           <div>

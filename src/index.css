@@ -16,6 +16,8 @@ h2{
   font-size: 1.6rem;
 }
 
+
+
 #root {
   height: 100%;
 }
@@ -44,7 +46,8 @@ main{
 footer{
   grid-area: footer;
   background-color: #212529;
-  color: white
+  color: white;
+  max-height: 40rem;
 }
 
 .navbar{
@@ -831,10 +834,10 @@ label {
 }
 
 .search-box {
-  position: absolute;
+  position: relative;
   display: flex;
   transform: translate(-50%, -50%);
-  height: 60px;
+  height: 0;
   background-color: #212529;
   line-height: 40px;
   padding: 10px;
@@ -842,6 +845,11 @@ label {
   cursor: pointer;
   align-items: center;
   justify-content: center;
+}
+
+.search__div {
+  padding-top: 2rem;
+  padding-left: 6rem;
 }
 
 .search-input{
@@ -906,6 +914,15 @@ background-color: red;
     flex-direction: column;
     width: 100%;
   } 
+
+  #searchscreen {
+    align-items: center;
+  }
+
+  .searchscreen {
+    align-items: center;
+  }
+
   div.col-6  {
     width: 100%;
   }
@@ -944,10 +961,10 @@ background-color: red;
     margin-bottom: 1rem;
   }
   .search-box {
-    position: absolute;
+    position: relative;
     display: flex;
-    transform: translate(-100%, -50%);
-    height: 60px;
+    transform: translate(-40%, -50%);
+    height: 0;
     background-color: #212529;
     line-height: 40px;
     padding: 10px;
@@ -1013,6 +1030,73 @@ background-color: red;
   .swiper-container {
     width: 480px;
   }
+  button.open-sidebar{
+  display: none;
+  }
+
+  .categoryhoodie {
+    display: none;
+  }
+
+  .hoodie {
+    display: none;
+  }
+
+  .searchscreen {
+    align-items: center;
+  }
+
+  .search-box:hover > .search-input, .search-input:focus {
+    width: 140px;
+  }
+
+  .categorycontainer {
+    flex-wrap: wrap;
+    height: 100%;
+    margin: 1rem;
+    gap: 1rem;
+  }
+
+  .categoryall {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+  }
+
+  .homeproducts {
+    gap: 2rem;
+
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev  {
+    visibility: hidden;
+  }
+
+  .carouselbrands {
+    display: none ;
+  }
+
+  .brands {
+    display: none
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      'header'
+      'main'
+      'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 9rem 1fr 53rem;
+    height: 100%;   
+  }
+
+  .text-brand {
+    display: none;
+  }
+
 }
   
   @media screen and (min-width: 640px) {
@@ -1022,7 +1106,22 @@ background-color: red;
   }
   
   @media screen and (min-width: 768px) {
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+
+
+
     .swiper-container {
       width: 768px;
+    }
+  }
+
+  @media screen and (min-width: 450px) {
+
+    .footer {
+      
     }
   }
