@@ -30,13 +30,13 @@ export default function HomeScreen() {
         autoPlay={true}
         showThumbs={false}
       >
-        <Link to="/product/62bb4ce3e42cf143c86968ac">
+        <Link to="/product/62e41cd121919890c9619b6b" className="asd">
           <img src="/images/banner1.png" alt="Banner1"></img>
         </Link>
-        <Link to="/product/62bb4ce3e42cf143c86968ac">
+        <Link to="/product/62e41b8f21919890c9619b42" className="asd">
           <img src="/images/banner2.PNG" alt="Banner2"></img>
         </Link>
-        <Link to="/product/62bb4ce3e42cf143c86968ac">
+        <Link to="/product/62e41c5c21919890c9619b5a" className="asd">
           <img src="/images/banner3.PNG" alt="Banner3"></img>
         </Link>
       </Carousel>
