@@ -950,7 +950,7 @@ label {
 background-color: red;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 920px) {
   
   div.row.top {
     display:flex;
@@ -1032,6 +1032,40 @@ background-color: red;
     zoom: 70%;
     padding-right: 2rem;
     }
+
+    .categoryhoodie {
+      display: none;
+    }
+  
+    .hoodie {
+      display: none;
+    }
+    
+    .categorycontainer {
+      flex-wrap: wrap;
+      height: 100%;
+      margin: 1rem;
+      gap: 1rem;
+    }
+  
+    .categoryall {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+
+    .carouselbrands {
+      display: none ;
+    }
+  
+    .brands {
+      display: none
+    }
+    .homeproducts {
+      gap: 2rem;
+    }
 }
 
 .table{
@@ -1074,7 +1108,7 @@ background-color: red;
 
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 540px) {
   .swiper-container {
     width: 480px;
   }
@@ -1090,14 +1124,6 @@ background-color: red;
     display: none;
   }
 
-  .searchscreen {
-    align-items: center;
-  }
-
-  .search-box:hover > .search-input, .search-input:focus {
-    width: 140px;
-  }
-
   .categorycontainer {
     flex-wrap: wrap;
     height: 100%;
@@ -1111,6 +1137,15 @@ background-color: red;
     position: absolute;
     height: 100%;
   }
+
+  .searchscreen {
+    align-items: center;
+  }
+
+  .search-box:hover > .search-input, .search-input:focus {
+    width: 140px;
+  }
+
 
   .homeproducts {
     gap: 2rem;
@@ -1145,6 +1180,9 @@ background-color: red;
     display: none;
   }
 
+  .review {
+  padding-right: 3rem;
+  }
 }
   
   @media screen and (min-width: 640px) {
