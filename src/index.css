@@ -865,7 +865,7 @@ label {
   
 }
 
-.dropdow .dropdow-content .dropdow-item{
+.dropdow .dropdow-content {
   padding: 10px;
   cursor: pointer;
   transition: all 0.2s;
